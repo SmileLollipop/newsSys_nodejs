@@ -1,0 +1,50 @@
+<%- include headerAdmin%>
+<%- include leftAdmin%>
+<div class="col-xs-10">
+    <div class="content">
+        <div class="item">
+            <div class="item-title">新闻列表</div>
+            <% if (success) { %>
+            <div class="message"><%= success %></div>
+            <% } %>
+            <% if (error) { %>
+            <div class="message"><%= error %> </div>
+            <% } %>
+            <!--新闻信息列表-->
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table class="table table-striped list-table">
+                        <thead>
+                        <tr>
+                            <th style="width:6%">分类</th>
+                            <th style="width:30%">标题</th>
+                            <th style="width:10%">标签</th>
+                            <th style="width:25%">图片</th>
+                            <th style="width:15%">创建时间</th>
+                            <th style="width:14%">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <% news.forEach(function (news, index) { %>
+                            <tr>
+                                <td>
+                                    <%=news.category%>
+                                </td>
+                                <td><%=news.title%></td>
+                                <td><%=news.label%></td>
+                                <td ><%=news.img%></td>
+                                <td><%=news.time.minute %></td>
+                                <td>
+                                    <a href="/admin/list/edit/<%=news._id%>" class="act-edit">修改</a>
+                                    &nbsp;&nbsp;&nbsp;<a href="/admin/list/remove/<%=news._id%>" class="act-del">删除</a>
+                                </td>
+                            </tr>
+                        <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include footerAdmin%>

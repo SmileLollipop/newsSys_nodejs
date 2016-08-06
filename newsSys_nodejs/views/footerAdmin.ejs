@@ -1,0 +1,18 @@
+        <div>
+    </div>
+</div>
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+        <script>
+            //切换菜单背景
+            var url=window.location.pathname;
+            if(url.indexOf("add") > 0 ){
+                $("#admin_add").addClass("active");
+            }else if(url.indexOf("list")>0){
+                $("#admin_list").addClass("active");
+            }else {
+                $("#admin").addClass("active");
+            }
+        </script>
+</body>
+</html>

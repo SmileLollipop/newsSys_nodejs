@@ -1,0 +1,24 @@
+<%- include header%>
+<ul class="list-group newsList">
+    <% news.forEach(function (news, index) { %>
+    <li class="list-group-item">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-4 col-sm-2 imgBox">
+                    <img src="<%= news.img %>" width="80px" height="70px">
+                </div>
+                <div class="col-xs-8 col-sm-10">
+                    <div class="title"><%= news.title %></div>
+                    <div class="time-lable clearfix" >
+                        <div class="time pull-left"><%=news.time.minute %> %></div>
+                        <div class="lable pull-right">
+                            <span class="label label-warning"><%= news.lable %></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <% }) %>
+</ul>
+
